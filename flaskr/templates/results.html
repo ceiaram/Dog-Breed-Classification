@@ -1,8 +1,14 @@
 <html>
   <head>
-    <title>Demo</title>
+    <title>Results</title>
   </head>
   <body>
+    {% if prediction %}
+    <h1>Hello {{ prediction }}!</h1>
+    {% else %}
+    <h1>Hello, World!</h1>
+    {% endif %}
+
     <h1>Goodbye</h1>
   </body>
 </html>

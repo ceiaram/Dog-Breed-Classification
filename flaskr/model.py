@@ -8,7 +8,8 @@ def get_model():
     
     # Create new instance of model 
     loaded_model = resnet50()
-    num_classes = len(get_class_names)
+    num_classes = len(get_class_names())
+    print("Number of classes: ", num_classes)
     # Load to gpu if avaiable or else load to cpu
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
     print(device)
