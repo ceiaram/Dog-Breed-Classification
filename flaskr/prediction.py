@@ -39,7 +39,7 @@ def get_prediction(image_bytes):
     # class_names_dict.update(class_names)
 
     class_names = get_class_names()
-    pred_labels_and_probs_results = []
+    pred_labels_and_probs_results_dict = {}
 
     image_pred_labels = torch.argsort(target_image_pred_probs, dim=1, descending=True)
     # image_pred_probs = torch.argsort(target_image_pred_probs, dim=1, descending=True)
@@ -62,10 +62,14 @@ def get_prediction(image_bytes):
         prob = pred_probs[0][index].item() * 100
 
         # Store the class name and its corresponding probability percentage in the list
-        pred_labels_and_probs_results.append((class_name, prob))
+        pred_labels_and_probs_results_dict[class_name] = prob
+
+        
     
 
+    # Sort dict by values fromn greatest to least
+    sorted_pred_labels_and_probs_results_dict = sorted(pred_labels_and_probs_results_dict.items(), key=lambda x:x[1], reverse=True)
 
-    print("RESULTS: ", pred_labels_and_probs_results)
-    return pred_labels_and_probs_results
+    print("RESULTS: ", sorted_pred_labels_and_probs_results_dict)
+    return sorted_pred_labels_and_probs_results_dict
 
