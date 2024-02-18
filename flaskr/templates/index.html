@@ -1,11 +1,14 @@
 <html>
   <head>
     <title>Demo</title>
+    <script src="../static/js/index.js"></script>
+    <link rel="stylesheet" href="../static/css/index.css">
   </head>
   <body>
     <h1>Upload an image</h1>
     <form action="/predict" method="POST" enctype="multipart/form-data">
-      <input type="file" name="file" accept="image/*" />
+      <input type="file" name="file" accept="image/*" onchange="displaySelectedImage(this, 'image-preview')" />
+      <img id="image-preview"></img>
       <input type="submit" value="Upload" />
     </form>
   </body>
