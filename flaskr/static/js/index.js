@@ -1,3 +1,4 @@
+// Displays the selected image in html
 function displaySelectedImage(input, target) {
   let file = input.files[0];
   let reader = new FileReader();
@@ -6,7 +7,13 @@ function displaySelectedImage(input, target) {
   reader.onload = function () {
     let img = document.getElementById(target);
     img.src = reader.result;
+
+    displayBtn(); //Now the Upload button can show
   };
-  //   var imageDiv = document.getElementById("image");
-  //   imageDiv.style.display = "block"
+}
+
+// Displays the upload button when an image is selected
+function displayBtn() {
+  let btn = document.getElementById("upload-button");
+  btn.style.display = "block";
 }

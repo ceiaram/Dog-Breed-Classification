@@ -5,19 +5,21 @@
     <link rel="stylesheet" href="../static/css/index.css" />
   </head>
   <body>
-    <h1>Upload an image</h1>
-
+    <h1>Upload a dog image</h1>
+    
     <form action="/predict" method="POST" enctype="multipart/form-data">
-      <input
-        type="file"
-        name="file"
-        accept="image/*"
-        onchange="displaySelectedImage(this, 'image-preview')"
-      />
-      <input type="submit" value="Upload" />
+      <img id="image-preview"></img>
+      <div class="button-div">
+        <input
+          type="file"
+          name="file"
+          accept="image/*"
+          onchange="displaySelectedImage(this, 'image-preview')"
+        />
+        <input id="upload-button" type="submit" value="Upload"/>
+      </div>
+   
     </form>
-
-    <img id="image-preview"></img>
    
   </body>
 </html>

@@ -1,18 +1,37 @@
+/* Wild card to center everything */
+* {
+  margin: auto;
+  border: 3px solid #73ad21; /*Helps view for formatting*/
+  padding: 10px;
+  width: fit-content;
+}
+
+.button-div {
+  display: flex;
+  justify-content: space-between;
+  max-width: 350px;
+}
+
 #image-preview {
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 350px;
-  width: 40%;
 }
+
+#upload-button {
+  display: none;
+}
+
 form input[type="file"] {
   display: inline-block;
 }
 form input[type="submit"] {
-  background-color: #4caf50; /* Green */
+  background-color: grey;
+  margin: 10px;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -20,10 +39,3 @@ form input[type="submit"] {
   cursor: pointer;
   border-radius: 8px;
 }
-
-/* .center {
-  margin: auto;
-  width: 60%;
-  border: 3px solid #73ad21;
-  padding: 10px;
-} */
