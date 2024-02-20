@@ -33,3 +33,10 @@ function displayChart(prediction) {
     },
   });
 }
+
+function displayLocalStorageImage() {
+  let image = document.getElementById("local-storage-image");
+  let dataImage = localStorage.getItem("imageData");
+
+  image.src = dataImage;
+}

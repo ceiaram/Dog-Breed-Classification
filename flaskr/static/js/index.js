@@ -9,6 +9,7 @@ function displaySelectedImage(input, target) {
     img.src = reader.result;
 
     displayBtn(); //Now the Upload button can show
+    localStorage.setItem("imageData", reader.result); // Store image on local storage
   };
 }
 

@@ -6,6 +6,13 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
+    
+    <img id="local-storage-image"></img>
+    <script>
+      displayLocalStorageImage()
+    </script>
+
+
     {% if prediction %}
      <!-- {% for pred in prediction%}
     <h1>Predictions: {{ pred[0] }}!</h1>
@@ -22,6 +29,5 @@
     <h1>No prediction available.</h1>
     {% endif %}
 
-    <h1>Goodbye</h1>
   </body>
 </html>
