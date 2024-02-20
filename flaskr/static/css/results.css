@@ -1,0 +1,12 @@
+/* Wild card to center everything */
+* {
+  margin: auto;
+  border: 3px solid #73ad21; /*Helps view for formatting*/
+  padding: 10px;
+  width: fit-content;
+}
+
+#my-chart {
+  width: 100%;
+  height: 100%;
+}

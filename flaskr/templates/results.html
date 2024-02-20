@@ -1,10 +1,23 @@
 <html>
   <head>
     <title>Results</title>
+    <link rel="stylesheet" href="../static/css/results.css" />
+    <script src="../static/js/results.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     {% if prediction %}
-    <h1>Predictions: {{ prediction }}!</h1>
+     <!-- {% for pred in prediction%}
+    <h1>Predictions: {{ pred[0] }}!</h1>
+    {% endfor %} -->
+    
+    <canvas id="my-chart"></canvas>
+
+    <script type=text/javascript>
+      //Call displayChart function passing the prediction data
+      displayChart({{ prediction | tojson }});
+    </script>
+
     {% else %}
     <h1>No prediction available.</h1>
     {% endif %}
