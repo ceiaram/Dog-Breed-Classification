@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="../static/css/results.css" />
     <script src="../static/js/results.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+
   </head>
   <body>
     
@@ -12,14 +16,18 @@
       displayLocalStorageImage()
     </script>
 
-
     {% if prediction %}
      <!-- {% for pred in prediction%}
     <h1>Predictions: {{ pred[0] }}!</h1>
     {% endfor %} -->
     
-    <canvas id="my-chart"></canvas>
-
+    <div id="my-charts">
+      <h1>Top 5 Predictions</h1>
+      <canvas id="my-bar-chart"></canvas>
+      <canvas id="my-bubble-chart"></canvas>
+      
+    </div>
+    
     <script type=text/javascript>
       //Call displayChart function passing the prediction data
       displayChart({{ prediction | tojson }});
